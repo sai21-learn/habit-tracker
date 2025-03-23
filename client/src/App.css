@@ -1,0 +1,77 @@
+/* App.css — Red & Black Theme */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #ff4c4c;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  background: #111;
+  padding: 14px;
+  border-bottom: 2px solid #ff4c4c;
+}
+
+nav a {
+  color: #ff4c4c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #ff6666;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ff4c4c;
+  border-radius: 4px;
+  background-color: #111;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1a1a;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #111;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid #ff4c4c;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(255, 76, 76, 0.3);
+}
