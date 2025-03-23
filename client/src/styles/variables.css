@@ -1,0 +1,63 @@
+:root {
+  /* Primary colors */
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  
+  /* Text colors */
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  
+  /* Background colors */
+  --bg-light: #f9fafb;
+  --bg-white: #ffffff;
+  
+  /* Accent colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  
+  /* Category colors */
+  --health: #ef4444;
+  --health-light: #fee2e2;
+  
+  --spirituality: #8b5cf6;
+  --spirituality-light: #ede9fe;
+  
+  --sleep: #3b82f6;
+  --sleep-light: #dbeafe;
+  
+  --academic: #10b981;
+  --academic-light: #d1fae5;
+  
+  --other: #6b7280;
+  --other-light: #f3f4f6;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05);
+  
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+} 

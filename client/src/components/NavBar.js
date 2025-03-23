@@ -6,7 +6,7 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [user, setUser] = useState({
+  const [user] = useState({
     name: 'Demo User',
     level: 3,
     xp: 230
@@ -71,7 +71,7 @@ const Navbar = () => {
           <li className="nav-item">
             <Link 
               to="/" 
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} 
+              className={`nav-link ${isActive('/') ? 'active' : ''}`} 
               onClick={closeMenu}
             >
               <Home size={20} />
@@ -81,7 +81,7 @@ const Navbar = () => {
           <li className="nav-item">
             <Link 
               to="/analytics" 
-              className={`nav-link ${location.pathname === '/analytics' ? 'active' : ''}`} 
+              className={`nav-link ${isActive('/analytics') ? 'active' : ''}`} 
               onClick={closeMenu}
             >
               <BarChart2 size={20} />
@@ -91,7 +91,7 @@ const Navbar = () => {
           <li className="nav-item">
             <Link 
               to="/challenges" 
-              className={`nav-link ${location.pathname === '/challenges' ? 'active' : ''}`} 
+              className={`nav-link ${isActive('/challenges') ? 'active' : ''}`} 
               onClick={closeMenu}
             >
               <Award size={20} />
@@ -101,7 +101,7 @@ const Navbar = () => {
           <li className="nav-item">
             <Link 
               to="/profile" 
-              className={`nav-link ${location.pathname === '/profile' ? 'active' : ''}`} 
+              className={`nav-link ${isActive('/profile') ? 'active' : ''}`} 
               onClick={closeMenu}
             >
               <User size={20} />
