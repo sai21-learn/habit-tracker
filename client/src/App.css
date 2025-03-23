@@ -1,66 +1,157 @@
-body {
+/* Base styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
-  color: #fff;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
 
-nav {
-  background: #111;
-  padding: 10px;
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.App {
+  min-height: 100vh;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
 }
 
-nav a {
-  color: red;
-  text-decoration: none;
-  font-weight: bold;
+:root {
+  --primary: #6366f1;
+  --primary-light: #a5b4fc;
+  --health: #ef4444;
+  --health-light: #fee2e2;
+  --spirituality: #8b5cf6;
+  --spirituality-light: #ede9fe;
+  --sleep: #3b82f6;
+  --sleep-light: #dbeafe;
+  --academic: #10b981;
+  --academic-light: #d1fae5;
+  --other: #6b7280;
+  --other-light: #f3f4f6;
 }
 
-.container {
-  padding: 20px;
+.section-title {
+  margin-bottom: 20px;
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-form {
-  margin-top: 20px;
+.welcome-message {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary);
 }
 
-input {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #222;
-  color: white;
+.welcome-message p {
+  color: #4b5563;
+  line-height: 1.5;
 }
 
-button {
-  background-color: red;
-  border: none;
-  padding: 10px 15px;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: darkred;
-}
-
-.habit-cards {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-}
-
-.habit-card {
-  padding: 15px;
-  background-color: #222;
-  border-radius: 10px;
-  cursor: pointer;
+/* Shared utility classes */
+.empty-state {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.empty-state svg {
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  color: #4b5563;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.empty-state p {
+  color: #6b7280;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Toast notification custom styles */
+.Toastify__toast {
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.Toastify__toast-body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif !important;
+  font-size: 0.9rem !important;
+}
+
+.Toastify__toast--success {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+}
+
+.Toastify__toast--error {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+}
+
+.Toastify__toast--warning {
+  background-color: #fffbeb !important;
+  color: #92400e !important;
+}
+
+.Toastify__toast--info {
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-message {
+    padding: 12px 16px;
+  }
+  
+  .empty-state {
+    padding: 30px 15px;
+  }
 }

@@ -16,61 +16,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  },
-  xp: {
-    type: Number,
-    default: 0
-  },
-  level: {
-    type: Number,
-    default: 1
-  },
-  points: {
-    type: Number,
-    default: 0
-  },
-  badges: [{
-    name: String,
-    description: String,
-    dateEarned: Date
-  }],
-  totalStreakDays: {
-    type: Number,
-    default: 0
-  },
-  longestStreak: {
-    type: Number,
-    default: 0
-  },
-  categoryStats: {
-    health: {
-      completionRate: { type: Number, default: 0 },
-      streak: { type: Number, default: 0 }
-    },
-    spirituality: {
-      completionRate: { type: Number, default: 0 },
-      streak: { type: Number, default: 0 }
-    },
-    sleep: {
-      completionRate: { type: Number, default: 0 },
-      streak: { type: Number, default: 0 }
-    },
-    academic: {
-      completionRate: { type: Number, default: 0 },
-      streak: { type: Number, default: 0 }
-    },
-    other: {
-      completionRate: { type: Number, default: 0 },
-      streak: { type: Number, default: 0 }
-    }
-  },
-  profilePicture: {
-    type: String,
-    default: '/images/default-avatar.png'
-  },
-  lastLogin: {
-    type: Date,
-    default: Date.now
   }
 });
 
