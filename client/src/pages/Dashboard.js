@@ -1,29 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { CheckCircle, Circle } from 'lucide-react';
+
+
 
 export default function Dashboard() {
   const [habitName, setHabitName] = useState('');
   const [habits, setHabits] = useState([]);
   const [message, setMessage] = useState('');
+  const [completedHabits, setCompletedHabits] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch habits on page load
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log("Token is", token); // ✅ TEMP DEBUG LINE
-
+    if (!token) {
+      setMessage('User not authenticated.');
+      return;
+    }
     axios
       .get('http://localhost:5000/api/habits', {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${token}` },
       })
-      .then((res) => setHabits(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setHabits(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setMessage('Error loading habits.');
+        setLoading(false);
+      });
   }, []);
-  if (!token) {
-    console.log("User not authenticated.");
-    return;
-  }
-  
-  // ✅ Handle adding new habit
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
@@ -41,10 +48,22 @@ export default function Dashboard() {
     }
   };
 
-  return (
-    <div style={{ padding: '20px' }}>
-      <h2>Welcome to the Dashboard</h2>
+  const toggleCompletion = (id) => {
+    setCompletedHabits((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
+  const completionRate = () => {
+    const total = habits.length;
+    const completed = Object.values(completedHabits).filter(Boolean).length;
+    return total ? Math.round((completed / total) * 100) : 0;
+  };
+
+  if (loading) return <p style={{ padding: '20px' }}>Loading habits...</p>;
+
+  return (
+    <div className="container">
+      <h2>Welcome, Track Your Habits</h2>
+  
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -53,17 +72,47 @@ export default function Dashboard() {
           placeholder="Enter a new habit"
           required
         />
-        <button type="submit">Add Habit</button>
+        <button type="submit">+ Add Habit</button>
       </form>
+  
+      <p>{message}</p>
+  
+      <h3>Your Habits:</h3>
+      <ul className="habit-list">
+        {habits.map((habit) => (
+          <li key={habit._id} className="habit-card">{habit.name}</li>
+        ))}
+      </ul>
+  
 
       <p>{message}</p>
 
-      <h3>Your Habits:</h3>
-      <ul>
+      <div className="progress-bar">
+  <div className="progress-fill" style={{ width: `${completionRate()}%` }}></div>
+</div>
+
+      <p>{completionRate()}% completed today</p>
+
+      <div className="habit-cards">
         {habits.map((habit) => (
-          <li key={habit._id}>{habit.name}</li>
+          <div
+            key={habit._id}
+            className="habit-card"
+            onClick={() => toggleCompletion(habit._id)}
+            style={{
+              background: completedHabits[habit._id] ? '#004d40' : '#111',
+              color: '#fff',
+            }}
+          >
+            {completedHabits[habit._id] ? (
+              <CheckCircle color="#00E676" />
+            ) : (
+              <Circle color="#757575" />
+            )}
+            <span style={{ marginLeft: '10px' }}>{habit.name}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

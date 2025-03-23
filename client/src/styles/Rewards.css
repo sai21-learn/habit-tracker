@@ -1,0 +1,140 @@
+.rewards-container {
+  padding: 25px;
+}
+
+.rewards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-points {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.points-icon {
+  color: #ffc107;
+}
+
+.points-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.points-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.reward-tabs {
+  display: flex;
+  gap: 15px;
+}
+
+.rewards-intro, .achievements-intro {
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.rewards-grid, .achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.reward-card, .achievement-card {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.reward-card.unlocked {
+  background: linear-gradient(to bottom right, rgba(0, 230, 118, 0.05), rgba(0, 176, 255, 0.05));
+  border-top: 3px solid var(--primary);
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(to bottom right, rgba(0, 230, 118, 0.05), rgba(0, 176, 255, 0.05));
+  border-top: 3px solid var(--primary);
+}
+
+.reward-icon, .achievement-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 230, 118, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.reward-content, .achievement-content {
+  flex-grow: 1;
+}
+
+.reward-content h3, .achievement-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.reward-content p, .achievement-content p {
+  color: var(--text-secondary);
+  margin: 0 0 15px;
+  line-height: 1.5;
+}
+
+.reward-cost {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  margin-bottom: 15px;
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.reward-status, .achievement-status {
+  margin-top: 15px;
+}
+
+.achievement-unlock-date, .achievement-xp-reward {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.achievement-completed {
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.achievement-locked {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+} 

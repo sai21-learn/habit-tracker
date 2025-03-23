@@ -1,0 +1,403 @@
+.profile-container {
+  padding: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.profile-user-info h2 {
+  margin: 0 0 5px;
+  font-size: 1.8rem;
+}
+
+.profile-user-info p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.profile-tabs button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.profile-tabs button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile-tabs button.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Stats Section */
+.stats-overview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.circular-progress-container {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-label {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.circular-progress {
+  position: relative;
+}
+
+.circular-progress-bg {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.05);
+}
+
+.circular-progress-fill {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.circular-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: calc(100% - 240px);
+}
+
+.stat-card {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.stat-content h3 {
+  margin: 0 0 5px;
+  font-size: 1.6rem;
+}
+
+.stat-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.category-stats {
+  margin-top: 30px;
+}
+
+.category-stats h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.category-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-stat-card {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.category-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.category-header h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.progress-bar-container {
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.progress-percentage {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.category-streak {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--warning);
+  font-size: 0.85rem;
+}
+
+/* Achievements Section */
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-header h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(to right, rgba(0, 230, 118, 0.1), rgba(0, 176, 255, 0.1));
+  border-left: 3px solid var(--primary);
+}
+
+.achievement-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.achievement-card.unlocked .achievement-icon {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.achievement-content {
+  flex-grow: 1;
+}
+
+.achievement-content h4 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+}
+
+.achievement-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.achievement-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.achievement-card.unlocked .achievement-status {
+  color: var(--primary);
+}
+
+/* Streaks Section */
+.streaks-summary {
+  display: flex;
+  gap: 30px;
+}
+
+.streak-card {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 20px;
+  flex-basis: 60%;
+}
+
+.streak-stats-card {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 20px;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.streak-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.streak-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.streaks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.streak-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.streak-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.streak-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.habit-category-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.streak-days {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--warning);
+  font-weight: 500;
+}
+
+.streak-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.streak-stat h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.streak-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--warning);
+  margin-bottom: 5px;
+}
+
+.streak-stat p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.no-data-message {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+} 
